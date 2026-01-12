@@ -20,13 +20,14 @@ public record VignetteResponse(
 /// These reveal self-awareness, impression management, and cognitive style.
 /// </summary>
 public record MetaScores(
-    float SelfModelStability,      // Low variance in response times, few changes
+    float SelfModelStability,      // Few changes = stable self-model
     float HedgingTendency,          // Frequency of "depends/both/middle" answers
     float SocialDesirability,       // Correlation with culturally "ideal" answers
     float TheoryOfMindBias,         // As vs Tu asymmetry (self vs other attribution)
     float ImpressionManagement,     // Pattern of changing toward "better" answers
     float LatentContradiction,      // Inconsistency on mirror question pairs
-    float ResponseConfidence        // Inverse of latency spikes on sensitive items
+    float ResponseConfidence,       // Few changes = confident
+    float CognitiveDissonance       // Weighted inconsistency showing internal conflict
 )
 {
     // Additional computed properties for Assertive/Turbulent analysis

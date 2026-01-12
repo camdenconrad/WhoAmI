@@ -30,6 +30,7 @@ public class ResponseAnalyzer
         var impressionManagement = ComputeImpressionManagement(responses);
         var latentContradiction = ComputeLatentContradiction(responses, mirrorPairs);
         var responseConfidence = ComputeResponseConfidence(responses);
+        var cognitiveDissonance = ComputeCognitiveDissonance(responses, mirrorPairs);
 
         // Additional metrics for A/T variant
         var changedCount = responses.Count(r => r.WasChanged);
@@ -44,7 +45,8 @@ public class ResponseAnalyzer
             theoryOfMindBias,
             impressionManagement,
             latentContradiction,
-            responseConfidence
+            responseConfidence,
+            cognitiveDissonance
         )
         {
             AnswerChangeRate = answerChangeRate,
@@ -110,21 +112,18 @@ public class ResponseAnalyzer
     }
 
     /// <summary>
-    /// Low variance in response times + few changes = stable self-model.
-    /// High variance + many changes = uncertain or gaming.
+    /// Few changes = stable self-model.
+    /// Many changes = uncertain or gaming.
+    /// NO temporal weighting - only counts changes.
     /// </summary>
     private float ComputeSelfModelStability(IReadOnlyList<VignetteResponse> responses)
     {
         if (!responses.Any()) return 0.5f;
 
         var changeProportion = responses.Count(r => r.WasChanged) / (float)responses.Count;
-        var timeVariance = ComputeTimeVariance(responses);
 
-        // Lower change rate + lower variance = higher stability
-        var changeStability = 1f - changeProportion;
-        var timeStability = 1f - Math.Min(1f, timeVariance / 10000f); // Normalize variance
-
-        return (changeStability * 0.6f + timeStability * 0.4f);
+        // Lower change rate = higher stability (no time component)
+        return 1f - changeProportion;
     }
 
     /// <summary>
@@ -230,18 +229,16 @@ public class ResponseAnalyzer
     }
 
     /// <summary>
-    /// Inverse of latency spikes.
-    /// Fast, consistent answers = confident. Slow spikes = uncertain or editing.
+    /// Based on change count, not timing.
+    /// Few changes = confident. Many changes = uncertain or editing.
+    /// NO temporal component.
     /// </summary>
     private float ComputeResponseConfidence(IReadOnlyList<VignetteResponse> responses)
     {
         if (!responses.Any()) return 0.5f;
 
-        var avgTime = responses.Average(r => r.ResponseTimeMs);
-        var spikeCount = responses.Count(r => r.ResponseTimeMs > SlowResponseThresholdMs);
-
-        var spikeRatio = spikeCount / (float)responses.Count;
-        return 1f - spikeRatio;
+        var changeRatio = responses.Count(r => r.WasChanged) / (float)responses.Count;
+        return 1f - changeRatio;
     }
 
     // Helper methods
@@ -250,8 +247,8 @@ public class ResponseAnalyzer
     {
         // Typically option C in forced-choice questions
         // This is a heuristic - real implementation would check metadata
-        return response.SelectedOption == "C" &&
-               (response.VignetteId.Contains("ce03") || response.ResponseTimeMs > SlowResponseThresholdMs);
+        // NO temporal component
+        return response.SelectedOption == "C" && response.VignetteId.Contains("ce03");
     }
 
     private bool HasLatentContradictions(
@@ -310,11 +307,8 @@ public class ResponseAnalyzer
 
     private bool HasResponseLatencySpikes(IReadOnlyList<VignetteResponse> responses)
     {
-        var avgTime = responses.Average(r => r.ResponseTimeMs);
-        var spikes = responses.Count(r => r.ResponseTimeMs > avgTime * 2.5 ||
-                                          r.ResponseTimeMs > SlowResponseThresholdMs);
-
-        return spikes >= 2; // At least 2 significant spikes
+        // Removed - no temporal analysis
+        return false;
     }
 
     private bool HasBacktrackPattern(IReadOnlyList<VignetteResponse> responses)
@@ -325,10 +319,8 @@ public class ResponseAnalyzer
 
     private bool AllResponsesFast(IReadOnlyList<VignetteResponse> responses)
     {
-        if (!responses.Any()) return false;
-
-        var fastCount = responses.Count(r => r.ResponseTimeMs < FastResponseThresholdMs);
-        return fastCount > responses.Count * 0.8; // 80%+ fast responses
+        // Removed - no temporal analysis
+        return false;
     }
 
     private bool HasSocialDesirabilitySpike(IReadOnlyList<VignetteResponse> responses)
@@ -337,13 +329,49 @@ public class ResponseAnalyzer
         return ComputeSocialDesirability(responses) > 0.7f;
     }
 
-    private float ComputeTimeVariance(IReadOnlyList<VignetteResponse> responses)
+    /// <summary>
+    /// Calculate COGNITIVE DISSONANCE: weighted inconsistency on mirror pairs,
+    /// accounting for strength of opposing beliefs and change patterns.
+    /// High dissonance = actively struggling with contradictory self-views.
+    /// </summary>
+    private float ComputeCognitiveDissonance(
+        IReadOnlyList<VignetteResponse> responses,
+        IReadOnlyList<MirrorPair> mirrorPairs)
     {
-        if (!responses.Any()) return 0f;
+        if (!mirrorPairs.Any()) return 0f;
 
-        var mean = responses.Average(r => r.ResponseTimeMs);
-        var variance = responses.Average(r => Math.Pow(r.ResponseTimeMs - mean, 2));
+        var dissonanceSum = 0f;
+        var pairCount = 0;
 
-        return (float)variance;
+        foreach (var pair in mirrorPairs)
+        {
+            var r1 = responses.FirstOrDefault(r => r.VignetteId == pair.VignetteId1);
+            var r2 = responses.FirstOrDefault(r => r.VignetteId == pair.VignetteId2);
+
+            if (r1 != null && r2 != null)
+            {
+                // Base contradiction check
+                var isContradictory = IsContradictory(r1, r2, pair);
+
+                if (isContradictory)
+                {
+                    // Weight by change count - more changes = more dissonance
+                    var changeWeight = 1f + (r1.ChangeCount + r2.ChangeCount) * 0.2f;
+
+                    // Weight by extremity - contradicting extremes shows more dissonance
+                    var extremityWeight = 1f;
+                    if ((r1.SelectedOption == "A" && r2.SelectedOption == "C") ||
+                        (r1.SelectedOption == "C" && r2.SelectedOption == "A"))
+                    {
+                        extremityWeight = 1.5f;
+                    }
+
+                    dissonanceSum += changeWeight * extremityWeight;
+                    pairCount++;
+                }
+            }
+        }
+
+        return pairCount > 0 ? dissonanceSum / mirrorPairs.Count : 0f;
     }
 }
