@@ -1,0 +1,257 @@
+@page "/"
+@using System.IO
+@using WhoAmI.ViewModels
+@using WhoAmI.Models
+@using Microsoft.AspNetCore.Components
+@inject MainViewModel ViewModel
+@inject NavigationManager Navigation
+
+<div class="main-container">
+    @if (ViewModel.IsWelcomeScreen)
+    {
+        <div class="welcome-screen">
+            <div class="welcome-content">
+                <h1 class="title">WhoAmI</h1>
+                <p class="subtitle">High-Dimensional Personality Assessment</p>
+
+                <div class="info-card">
+                    <p>This assessment maps your cognitive patterns in high-dimensional space, avoiding traditional personality "buckets."</p>
+                    <p>• Choose options based on your ACTUAL behavior, not your ideal self</p>
+                    <p>• Each choice activates multiple trait dimensions simultaneously</p>
+                    <p>• Contradictions are preserved as features, not bugs</p>
+                </div>
+
+                <button class="btn btn-primary start-btn" @onclick="StartTest">Start Assessment</button>
+            </div>
+        </div>
+    }
+    else if (ViewModel.IsTestInProgress)
+    {
+        <div class="test-screen">
+            <!-- Progress Header -->
+            <div class="progress-header">
+                <div class="stats-left">
+                    <span class="stat-number answered">@ViewModel.AnsweredQuestionCount</span>
+                    <span class="stat-label">answered</span>
+                    <span class="separator">•</span>
+                    <span class="stat-number flagged">@ViewModel.FlaggedQuestionCount</span>
+                    <span class="stat-label">flagged</span>
+                </div>
+
+                <div class="progress-center">
+                    <span class="progress-text">@ViewModel.ProgressText</span>
+                </div>
+
+                <div class="stats-right">
+                    @if (ViewModel.AllQuestionsAnswered)
+                    {
+                        <button class="btn btn-success" @onclick="FinishTest">Review &amp; Finish</button>
+                    }
+                </div>
+            </div>
+
+            <!-- Question Card -->
+            @if (ViewModel.CurrentQuestion != null)
+            {
+                <div class="question-card">
+                    <div class="question-header">
+                        <span class="context">@ViewModel.CurrentQuestion.Context</span>
+                        <button class="flag-btn" @onclick="ToggleFlag" title="Flag this question to review later">
+                            <span class="flag-icon @(ViewModel.IsCurrentQuestionFlagged ? "flagged" : "")">
+                                @(ViewModel.IsCurrentQuestionFlagged ? "🚩" : "⚐")
+                            </span>
+                        </button>
+                    </div>
+
+                    @if (ViewModel.IsCurrentQuestionAnswered)
+                    {
+                        <div class="answered-indicator">
+                            ✓ Answered (you can change your answer)
+                        </div>
+                    }
+
+                    <h2 class="scenario">@ViewModel.CurrentQuestion.Scenario</h2>
+
+                    <div class="options-list">
+                        @foreach (var (option, index) in ViewModel.CurrentQuestion.Options.Select((o, i) => (o, i)))
+                        {
+                            <button class="option-btn" @onclick="() => AnswerOption(index)">
+                                @option.Description
+                            </button>
+                        }
+                    </div>
+                </div>
+            }
+
+            <!-- Navigation Controls -->
+            <div class="navigation">
+                <button class="btn btn-secondary" @onclick="GoBack" disabled="@(!ViewModel.CanGoBack)">← Previous</button>
+
+                <div class="quick-nav">
+                    @if (ViewModel.FlaggedQuestionCount > 0)
+                    {
+                        <button class="btn btn-warning" @onclick="GoToFlagged">Jump to Flagged</button>
+                    }
+                    <button class="btn btn-danger-light" @onclick="GoToUnanswered">Jump to Unanswered</button>
+                </div>
+
+                <button class="btn btn-secondary" @onclick="GoForward" disabled="@(!ViewModel.CanGoForward)">Next →</button>
+            </div>
+        </div>
+    }
+    else if (ViewModel.IsTestComplete)
+    {
+        <div class="results-screen">
+            <h1 class="results-title">Your Personality Profile</h1>
+
+            <!-- MBTI Type with Variant -->
+            <div class="mbti-card">
+                <h3>Your Personality Type</h3>
+                <div class="type-variant">@ViewModel.MBTITypeWithVariant</div>
+                <p class="mbti-display">@ViewModel.MBTITypeDisplay</p>
+                <hr class="variant-divider" />
+                <p class="variant-description">@ViewModel.AssertiveTurbulentDescription</p>
+            </div>
+
+            <!-- High-Dimensional Profile -->
+            <div class="profile-card">
+                <h3>High-Dimensional Profile</h3>
+                <p class="profile-intro">Your personality exists in multi-dimensional space. The 16 Personalities type above is a simplified projection.</p>
+
+                <hr />
+
+                <h4>Cognitive Function Stack</h4>
+                <div class="function-stack">
+                    @if (ViewModel.SubTraitsDisplay.Any())
+                    {
+                        <p class="stack-intro">Beyond your dominant functions, you show strong usage of:</p>
+                        @foreach (var subTrait in ViewModel.SubTraitsDisplay)
+                        {
+                            <div class="sub-trait-item">
+                                <div class="sub-trait-header">
+                                    <span class="sub-trait-function">@subTrait.Function</span>
+                                    <span class="sub-trait-strength">@subTrait.Strength.ToString("F1")</span>
+                                </div>
+                                <p class="sub-trait-desc">@subTrait.Description</p>
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <p class="stack-intro">Your cognitive functions align closely with your type's dominant stack.</p>
+                    }
+                </div>
+
+                <hr />
+
+                <h4>Dominant Traits</h4>
+                <div class="traits-list">
+                    @foreach (var trait in ViewModel.DominantTraitsDisplay)
+                    {
+                        <div class="trait-item">
+                            <span class="trait-id">@trait.TraitId</span>:
+                            <span class="trait-strength">@trait.Strength.ToString("F2")</span>
+                        </div>
+                    }
+                </div>
+
+                <hr />
+
+                <h4>Personality Metrics</h4>
+                <div class="metrics">
+                    <div class="metric-item diversity">
+                        <strong>Trait Diversity:</strong>
+                        <span class="metric-value">@ViewModel.TraitDiversityDisplay</span>
+                        <em>(complexity)</em>
+                    </div>
+                    <div class="metric-item variance">
+                        <strong>Context Variance:</strong>
+                        <span class="metric-value">@ViewModel.ContextVarianceDisplay</span>
+                        <em>(adaptability)</em>
+                    </div>
+                    <div class="metric-item contradiction">
+                        <strong>Contradiction Tolerance:</strong>
+                        <span class="metric-value">@ViewModel.ContradictionToleranceDisplay</span>
+                        <em>(nuance)</em>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button class="btn btn-success" @onclick="SaveResults">Save Results (JSON + TXT)</button>
+                <button class="btn btn-secondary" @onclick="RestartTest">Take Test Again</button>
+            </div>
+        </div>
+    }
+</div>
+
+@code {
+    protected override void OnInitialized()
+    {
+        ViewModel.PropertyChanged += (s, e) => StateHasChanged();
+    }
+
+    private void StartTest()
+    {
+        ViewModel.StartTest();
+    }
+
+    private void AnswerOption(int index)
+    {
+        ViewModel.AnswerQuestion(index);
+    }
+
+    private void GoBack()
+    {
+        ViewModel.GoBack();
+    }
+
+    private void GoForward()
+    {
+        ViewModel.GoForward();
+    }
+
+    private void ToggleFlag()
+    {
+        ViewModel.ToggleFlagCurrentQuestion();
+    }
+
+    private void GoToFlagged()
+    {
+        ViewModel.GoToFirstFlagged();
+    }
+
+    private void GoToUnanswered()
+    {
+        ViewModel.GoToFirstUnanswered();
+    }
+
+    private void FinishTest()
+    {
+        ViewModel.CompleteTest();
+    }
+
+    private async Task SaveResults()
+    {
+        var timestamp = DateTime.Now.ToString("yyyyMMdd_HHmmss");
+        var downloadsPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "Downloads");
+        var basePath = Path.Combine(downloadsPath, $"WhoAmI_Results_{timestamp}");
+
+        await ViewModel.SaveResultsAsync(basePath);
+
+        // Results saved - in a real app, you'd trigger a download or show a message
+        Console.WriteLine($"Results saved to: {basePath}.json and {basePath}.txt");
+    }
+
+    private void RestartTest()
+    {
+        // Reset the ViewModel by requesting a new one from DI
+        Navigation.NavigateTo("/", forceLoad: true);
+    }
+
+    public void Dispose()
+    {
+        ViewModel.PropertyChanged -= (s, e) => StateHasChanged();
+    }
+}

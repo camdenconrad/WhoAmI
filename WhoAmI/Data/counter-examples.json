@@ -1,0 +1,1014 @@
+{
+  "counter_example_vignettes": [
+    {
+      "id": "ce01_control_taking",
+      "question": "When a plan starts to fall apart, you usually:",
+      "context": ["Problem-solving", "Control"],
+      "mirror_of": "ce02_control_intrusion",
+      "trait_probed": "control_seeking",
+      "options": [
+        {
+          "label": "A",
+          "text": "Take over and reorganize things yourself",
+          "traits": {
+            "control_seeking": 0.95,
+            "confrontation_tolerant": 0.8,
+            "specification_first": 0.7,
+            "loss_avoidance": 0.6
+          }
+        },
+        {
+          "label": "B",
+          "text": "Step back and let things resolve naturally",
+          "traits": {
+            "trust_delegating": 0.9,
+            "ambiguity_tolerant": 0.8,
+            "confrontation_averse": 0.7
+          }
+        },
+        {
+          "label": "C",
+          "text": "Adapt your role but don't take the lead",
+          "traits": {
+            "opportunistic_planning": 0.85,
+            "responds_to_interaction": 0.75,
+            "ambiguity_tolerant": 0.6
+          }
+        }
+      ]
+    },
+    {
+      "id": "ce02_control_intrusion",
+      "question": "Someone else steps in and changes your plan without asking. You feel:",
+      "context": ["Social", "Control"],
+      "mirror_of": "ce01_control_taking",
+      "trait_probed": "control_seeking",
+      "expected_correlation": "negative",
+      "gaming_trap": "If A+A or B+B selected → latent contradiction",
+      "options": [
+        {
+          "label": "A",
+          "text": "Relieved someone else is handling it",
+          "traits": {
+            "trust_delegating": 0.95,
+            "loss_avoidance": -0.7,
+            "control_seeking": -0.8
+          }
+        },
+        {
+          "label": "B",
+          "text": "Annoyed they didn't consult you first",
+          "traits": {
+            "control_seeking": 0.95,
+            "boundary_asserting": 0.85,
+            "confrontation_tolerant": 0.7
+          }
+        },
+        {
+          "label": "C",
+          "text": "Curious about their approach",
+          "traits": {
+            "belief_plasticity": 0.9,
+            "challenge_seeking": 0.75,
+            "ambiguity_tolerant": 0.7
+          }
+        }
+      ]
+    },
+    {
+      "id": "ce03_decision_speed",
+      "question": "Which is more true of you?",
+      "context": ["Decision-making", "Risk"],
+      "mirror_of": "ce04_decision_regret",
+      "trait_probed": "risk_sampling",
+      "dominance_pressure": true,
+      "gaming_trap": "Users who always pick C get hedging_bias flag",
+      "options": [
+        {
+          "label": "A",
+          "text": "I'd rather make the wrong call than wait too long",
+          "traits": {
+            "risk_sampling": 0.95,
+            "deadline_driven": 0.85,
+            "iteration_first": 0.8,
+            "loss_avoidance": -0.6
+          }
+        },
+        {
+          "label": "B",
+          "text": "I'd rather wait than risk being wrong",
+          "traits": {
+            "risk_filtering": 0.95,
+            "loss_avoidance": 0.9,
+            "ambiguity_intolerant": 0.8
+          }
+        },
+        {
+          "label": "C",
+          "text": "Depends entirely on who's involved",
+          "traits": {
+            "context_dependent_comm": 0.7,
+            "boundary_probing": 0.6
+          },
+          "hedging_marker": true
+        }
+      ]
+    },
+    {
+      "id": "ce04_decision_regret",
+      "question": "You made a quick decision that turned out poorly. Your first thought:",
+      "context": ["Emotional", "Risk"],
+      "mirror_of": "ce03_decision_speed",
+      "trait_probed": "risk_sampling",
+      "expected_correlation": "positive",
+      "emotional_frame": "regret",
+      "options": [
+        {
+          "label": "A",
+          "text": "I should have taken more time to think",
+          "traits": {
+            "risk_filtering": 0.9,
+            "loss_avoidance": 0.85,
+            "emotion_first": 0.7
+          }
+        },
+        {
+          "label": "B",
+          "text": "At least I took action instead of freezing",
+          "traits": {
+            "risk_sampling": 0.9,
+            "reward_seeking": 0.75,
+            "affect_filtered": 0.7
+          }
+        },
+        {
+          "label": "C",
+          "text": "What can I learn from this?",
+          "traits": {
+            "belief_plasticity": 0.95,
+            "challenge_seeking": 0.85,
+            "outcome_driven": 0.8
+          }
+        }
+      ]
+    },
+    {
+      "id": "ce05_self_cancel",
+      "question": "When you cancel plans last minute, it's usually because:",
+      "context": ["Social", "Self"],
+      "mirror_of": "ce06_other_cancel",
+      "trait_probed": "attribution_bias",
+      "as_tu_test": "self",
+      "options": [
+        {
+          "label": "A",
+          "text": "Something genuinely came up unexpectedly",
+          "traits": {
+            "external_prompts": 0.8,
+            "opportunistic_planning": 0.7
+          }
+        },
+        {
+          "label": "B",
+          "text": "I changed my mind about going",
+          "traits": {
+            "intrinsic_goals": 0.9,
+            "boundary_asserting": 0.8,
+            "optionality_preservation": 0.75
+          }
+        },
+        {
+          "label": "C",
+          "text": "I misjudged my energy or capacity",
+          "traits": {
+            "present_situational": 0.85,
+            "belief_plasticity": 0.7,
+            "affect_driven": 0.65
+          }
+        }
+      ]
+    },
+    {
+      "id": "ce06_other_cancel",
+      "question": "When someone else cancels on you last minute, it's usually because:",
+      "context": ["Social", "Other"],
+      "mirror_of": "ce05_self_cancel",
+      "trait_probed": "attribution_bias",
+      "as_tu_test": "other",
+      "expected_asymmetry": "self gets more situational, other gets more dispositional",
+      "options": [
+        {
+          "label": "A",
+          "text": "Something came up for them",
+          "traits": {
+            "implied_meaning": 0.8,
+            "ambiguity_tolerant": 0.75,
+            "trust_delegating": 0.7
+          }
+        },
+        {
+          "label": "B",
+          "text": "They changed their mind",
+          "traits": {
+            "literal_interpretation": 0.75,
+            "boundary_asserting": 0.7
+          }
+        },
+        {
+          "label": "C",
+          "text": "They're unreliable with commitments",
+          "traits": {
+            "rule_first": 0.85,
+            "principle_driven": 0.8,
+            "loss_avoidance": 0.7
+          },
+          "attribution_marker": "dispositional"
+        }
+      ]
+    },
+    {
+      "id": "ce07_interrupt_third",
+      "question": "Alex interrupts Jamie repeatedly in a meeting. What do you think Alex is most likely doing?",
+      "context": ["Social", "Theory-of-mind"],
+      "mirror_of": "ce08_interrupt_self",
+      "trait_probed": "intent_inference",
+      "third_person": true,
+      "options": [
+        {
+          "label": "A",
+          "text": "Trying to assert control of the conversation",
+          "traits": {
+            "control_seeking": 0.7,
+            "confrontation_tolerant": 0.6
+          },
+          "attribution_style": "intentional_dominance"
+        },
+        {
+          "label": "B",
+          "text": "Unaware they're interrupting",
+          "traits": {
+            "ambiguity_tolerant": 0.8,
+            "implied_meaning": -0.6
+          },
+          "attribution_style": "situational_ignorance"
+        },
+        {
+          "label": "C",
+          "text": "Trying to speed things up",
+          "traits": {
+            "deadline_driven": 0.8,
+            "optimization_seeking": 0.75,
+            "task_batching": 0.6
+          },
+          "attribution_style": "efficiency_goal"
+        }
+      ]
+    },
+    {
+      "id": "ce08_interrupt_self",
+      "question": "Someone interrupts you repeatedly in a meeting. What do you assume first?",
+      "context": ["Social", "Self"],
+      "mirror_of": "ce07_interrupt_third",
+      "trait_probed": "intent_inference",
+      "second_person": true,
+      "as_tu_test": "self_other_switch",
+      "options": [
+        {
+          "label": "A",
+          "text": "They're trying to dominate the conversation",
+          "traits": {
+            "control_seeking": 0.8,
+            "boundary_asserting": 0.75,
+            "confrontation_tolerant": 0.7
+          }
+        },
+        {
+          "label": "B",
+          "text": "They don't realize they're doing it",
+          "traits": {
+            "ambiguity_tolerant": 0.85,
+            "confrontation_averse": 0.7
+          }
+        },
+        {
+          "label": "C",
+          "text": "They're excited and engaged with the topic",
+          "traits": {
+            "reward_seeking": 0.8,
+            "emotion_first": 0.7,
+            "holistic_sensing": 0.65
+          }
+        }
+      ]
+    },
+    {
+      "id": "ce09_authority_expertise",
+      "question": "An expert recommends something that contradicts your research. You:",
+      "context": ["Learning", "Authority"],
+      "mirror_of": "ce10_authority_consensus",
+      "trait_probed": "authority_skeptical",
+      "options": [
+        {
+          "label": "A",
+          "text": "Trust their expertise over your own understanding",
+          "traits": {
+            "authority_anchored": 0.95,
+            "trust_delegating": 0.85,
+            "belief_plasticity": 0.7
+          }
+        },
+        {
+          "label": "B",
+          "text": "Dig deeper to understand the discrepancy",
+          "traits": {
+            "authority_skeptical": 0.95,
+            "analytical_parsing": 0.9,
+            "precision_seeking": 0.8,
+            "challenge_seeking": 0.75
+          }
+        },
+        {
+          "label": "C",
+          "text": "Stick with what made sense to you",
+          "traits": {
+            "authority_skeptical": 0.85,
+            "belief_stability": 0.8,
+            "control_seeking": 0.7
+          }
+        }
+      ]
+    },
+    {
+      "id": "ce10_authority_consensus",
+      "question": "Multiple experts all say the same thing, but it feels wrong to you. You:",
+      "context": ["Learning", "Authority"],
+      "mirror_of": "ce09_authority_expertise",
+      "trait_probed": "authority_skeptical",
+      "expected_correlation": "positive",
+      "dominance_pressure": true,
+      "options": [
+        {
+          "label": "A",
+          "text": "Assume you're probably missing something",
+          "traits": {
+            "authority_anchored": 0.9,
+            "belief_plasticity": 0.85,
+            "ambiguity_tolerant": 0.7
+          }
+        },
+        {
+          "label": "B",
+          "text": "Still question whether consensus means truth",
+          "traits": {
+            "authority_skeptical": 0.95,
+            "principle_driven": 0.85,
+            "analytical_parsing": 0.8
+          }
+        },
+        {
+          "label": "C",
+          "text": "Look for evidence both ways",
+          "traits": {
+            "analytical_parsing": 0.9,
+            "precision_seeking": 0.85,
+            "belief_plasticity": 0.75
+          }
+        }
+      ]
+    },
+    {
+      "id": "ce11_praise_agency",
+      "question": "Someone praises you for something you feel was mostly luck. You:",
+      "context": ["Social", "Self-perception"],
+      "mirror_of": "ce12_blame_agency",
+      "trait_probed": "locus_of_control",
+      "emotional_frame": "positive",
+      "options": [
+        {
+          "label": "A",
+          "text": "Accept the praise gracefully",
+          "traits": {
+            "responds_to_interaction": 0.85,
+            "external_prompts": 0.75,
+            "confrontation_averse": 0.6
+          }
+        },
+        {
+          "label": "B",
+          "text": "Clarify that luck played a big role",
+          "traits": {
+            "explicit_verbalization": 0.9,
+            "precision_seeking": 0.85,
+            "boundary_asserting": 0.7
+          }
+        },
+        {
+          "label": "C",
+          "text": "Feel uncomfortable with unearned credit",
+          "traits": {
+            "principle_driven": 0.9,
+            "emotion_first": 0.8,
+            "loss_avoidance": 0.7
+          }
+        }
+      ]
+    },
+    {
+      "id": "ce12_blame_agency",
+      "question": "Something goes wrong that was mostly bad luck. People blame you. You feel:",
+      "context": ["Social", "Self-perception"],
+      "mirror_of": "ce11_praise_agency",
+      "trait_probed": "locus_of_control",
+      "emotional_frame": "negative",
+      "expected_asymmetry": "Most people externalize failure more than success",
+      "options": [
+        {
+          "label": "A",
+          "text": "Defensive - it wasn't really my fault",
+          "traits": {
+            "boundary_asserting": 0.9,
+            "emotion_first": 0.85,
+            "confrontation_tolerant": 0.7
+          }
+        },
+        {
+          "label": "B",
+          "text": "Responsible even though luck was involved",
+          "traits": {
+            "principle_driven": 0.9,
+            "control_seeking": 0.8,
+            "loss_avoidance": 0.75
+          }
+        },
+        {
+          "label": "C",
+          "text": "Frustrated they don't see the full situation",
+          "traits": {
+            "explicit_verbalization": 0.85,
+            "precision_seeking": 0.8,
+            "emotion_first": 0.75
+          }
+        }
+      ]
+    },
+    {
+      "id": "ce13_deadline_pressure",
+      "question": "A tight deadline is approaching. You work best when:",
+      "context": ["Work", "Temporal"],
+      "mirror_of": "ce14_deadline_outcome",
+      "trait_probed": "deadline_driven",
+      "options": [
+        {
+          "label": "A",
+          "text": "The pressure energizes and focuses you",
+          "traits": {
+            "deadline_driven": 0.95,
+            "reward_seeking": 0.8,
+            "risk_sampling": 0.7
+          }
+        },
+        {
+          "label": "B",
+          "text": "You have buffer time built in already",
+          "traits": {
+            "redundancy_building": 0.95,
+            "future_projection": 0.9,
+            "loss_avoidance": 0.85,
+            "control_seeking": 0.75
+          }
+        },
+        {
+          "label": "C",
+          "text": "You get anxious and less effective",
+          "traits": {
+            "steady_pace": 0.9,
+            "emotion_first": 0.85,
+            "loss_avoidance": 0.8
+          }
+        }
+      ]
+    },
+    {
+      "id": "ce14_deadline_outcome",
+      "question": "You finish right at the deadline. Looking back, you feel:",
+      "context": ["Work", "Temporal"],
+      "mirror_of": "ce13_deadline_pressure",
+      "trait_probed": "deadline_driven",
+      "expected_correlation": "positive",
+      "emotional_frame": "retrospective",
+      "options": [
+        {
+          "label": "A",
+          "text": "Satisfied you used the time efficiently",
+          "traits": {
+            "deadline_driven": 0.9,
+            "optimization_seeking": 0.85,
+            "outcome_driven": 0.8
+          }
+        },
+        {
+          "label": "B",
+          "text": "Stressed that it was so close",
+          "traits": {
+            "loss_avoidance": 0.95,
+            "redundancy_building": 0.85,
+            "emotion_first": 0.75
+          }
+        },
+        {
+          "label": "C",
+          "text": "Relieved you made it",
+          "traits": {
+            "emotion_first": 0.85,
+            "external_prompts": 0.75,
+            "sufficiency_seeking": 0.7
+          }
+        }
+      ]
+    },
+    {
+      "id": "ce15_conflict_initiate",
+      "question": "You notice tension but no one has addressed it. You typically:",
+      "context": ["Social", "Conflict"],
+      "mirror_of": "ce16_conflict_response",
+      "trait_probed": "confrontation_tolerant",
+      "options": [
+        {
+          "label": "A",
+          "text": "Bring it up directly",
+          "traits": {
+            "confrontation_tolerant": 0.95,
+            "explicit_verbalization": 0.9,
+            "initiates_interaction": 0.85,
+            "boundary_asserting": 0.75
+          }
+        },
+        {
+          "label": "B",
+          "text": "Wait to see if it resolves naturally",
+          "traits": {
+            "confrontation_averse": 0.9,
+            "ambiguity_tolerant": 0.85,
+            "responds_to_interaction": 0.8
+          }
+        },
+        {
+          "label": "C",
+          "text": "Address it privately with key people",
+          "traits": {
+            "context_dependent_comm": 0.9,
+            "confrontation_averse": 0.7,
+            "boundary_probing": 0.65
+          }
+        }
+      ]
+    },
+    {
+      "id": "ce16_conflict_response",
+      "question": "Someone directly confronts you about an issue. Your immediate reaction:",
+      "context": ["Social", "Conflict"],
+      "mirror_of": "ce15_conflict_initiate",
+      "trait_probed": "confrontation_tolerant",
+      "expected_correlation": "positive",
+      "emotional_frame": "reactive",
+      "options": [
+        {
+          "label": "A",
+          "text": "Engage directly with the issue",
+          "traits": {
+            "confrontation_tolerant": 0.95,
+            "explicit_verbalization": 0.85,
+            "boundary_asserting": 0.8
+          }
+        },
+        {
+          "label": "B",
+          "text": "Feel defensive or attacked",
+          "traits": {
+            "emotion_first": 0.9,
+            "confrontation_averse": 0.75,
+            "boundary_asserting": 0.7
+          }
+        },
+        {
+          "label": "C",
+          "text": "Ask them to explain their perspective",
+          "traits": {
+            "analytical_parsing": 0.85,
+            "precision_seeking": 0.8,
+            "confrontation_tolerant": 0.75,
+            "belief_plasticity": 0.7
+          }
+        }
+      ]
+    },
+    {
+      "id": "ce17_commitment_forced",
+      "question": "In general, which is more true of you?",
+      "context": ["Decision-making"],
+      "mirror_of": "ce18_commitment_regret",
+      "trait_probed": "pre_commitment",
+      "dominance_pressure": true,
+      "hedging_trap": true,
+      "options": [
+        {
+          "label": "A",
+          "text": "I'd rather commit early and adjust later",
+          "traits": {
+            "pre_commitment": 0.95,
+            "risk_sampling": 0.85,
+            "deadline_driven": 0.75
+          }
+        },
+        {
+          "label": "B",
+          "text": "I'd rather keep options open as long as possible",
+          "traits": {
+            "optionality_preservation": 0.95,
+            "ambiguity_tolerant": 0.85,
+            "risk_filtering": 0.75
+          }
+        },
+        {
+          "label": "C",
+          "text": "It entirely depends on the stakes",
+          "traits": {
+            "context_dependent_comm": 0.7
+          },
+          "hedging_marker": true
+        }
+      ]
+    },
+    {
+      "id": "ce18_commitment_regret",
+      "question": "You committed to something too early and now regret it. You feel:",
+      "context": ["Emotional"],
+      "mirror_of": "ce17_commitment_forced",
+      "trait_probed": "pre_commitment",
+      "expected_correlation": "negative",
+      "emotional_frame": "regret",
+      "options": [
+        {
+          "label": "A",
+          "text": "Frustrated that I locked myself in",
+          "traits": {
+            "optionality_preservation": 0.9,
+            "emotion_first": 0.85,
+            "loss_avoidance": 0.8
+          }
+        },
+        {
+          "label": "B",
+          "text": "Fine, I made the best choice with what I knew",
+          "traits": {
+            "pre_commitment": 0.9,
+            "affect_filtered": 0.85,
+            "outcome_driven": 0.75
+          }
+        },
+        {
+          "label": "C",
+          "text": "Annoyed at myself for not waiting",
+          "traits": {
+            "optionality_preservation": 0.85,
+            "emotion_first": 0.8,
+            "loss_avoidance": 0.75
+          }
+        }
+      ]
+    },
+    {
+      "id": "ce19_delegation_forced",
+      "question": "When forced to choose, which feels worse?",
+      "context": ["Work"],
+      "mirror_of": "ce20_delegation_feeling",
+      "trait_probed": "control_seeking",
+      "dominance_pressure": true,
+      "hedging_trap": true,
+      "options": [
+        {
+          "label": "A",
+          "text": "Delegating something I could do better myself",
+          "traits": {
+            "control_seeking": 0.95,
+            "loss_avoidance": 0.85,
+            "optimization_seeking": 0.8
+          }
+        },
+        {
+          "label": "B",
+          "text": "Doing everything myself when others could help",
+          "traits": {
+            "trust_delegating": 0.9,
+            "outcome_driven": 0.85,
+            "reward_seeking": 0.7
+          }
+        },
+        {
+          "label": "C",
+          "text": "Depends on who I'm delegating to",
+          "traits": {
+            "context_dependent_comm": 0.7
+          },
+          "hedging_marker": true
+        }
+      ]
+    },
+    {
+      "id": "ce20_delegation_feeling",
+      "question": "Someone else handles a task and does it worse than you would have. You feel:",
+      "context": ["Work", "Emotional"],
+      "mirror_of": "ce19_delegation_forced",
+      "trait_probed": "control_seeking",
+      "expected_correlation": "positive",
+      "emotional_frame": "irritation",
+      "options": [
+        {
+          "label": "A",
+          "text": "Vindicated - I knew I should have done it",
+          "traits": {
+            "control_seeking": 0.95,
+            "loss_avoidance": 0.9,
+            "affect_driven": 0.75
+          }
+        },
+        {
+          "label": "B",
+          "text": "Fine - they're learning and it's good enough",
+          "traits": {
+            "trust_delegating": 0.9,
+            "sufficiency_seeking": 0.85,
+            "affect_filtered": 0.75
+          }
+        },
+        {
+          "label": "C",
+          "text": "Disappointed but it was still worth delegating",
+          "traits": {
+            "trust_delegating": 0.85,
+            "outcome_driven": 0.8,
+            "long_horizon": 0.7
+          }
+        }
+      ]
+    },
+    {
+      "id": "ce21_conflict_escalation_third",
+      "question": "Taylor repeatedly ignores Morgan's requests. What's most likely happening?",
+      "context": ["Social"],
+      "mirror_of": "ce22_conflict_escalation_self",
+      "trait_probed": "attribution_bias",
+      "third_person": true,
+      "as_tu_test": "other",
+      "options": [
+        {
+          "label": "A",
+          "text": "Taylor is being passive-aggressive",
+          "traits": {
+            "confrontation_averse": -0.7
+          },
+          "attribution_style": "intentional_hostility"
+        },
+        {
+          "label": "B",
+          "text": "Taylor is overwhelmed and forgetting",
+          "traits": {
+            "ambiguity_tolerant": 0.85,
+            "trust_delegating": 0.75
+          },
+          "attribution_style": "situational_excuse"
+        },
+        {
+          "label": "C",
+          "text": "Taylor doesn't think the requests are important",
+          "traits": {
+            "analytical_parsing": 0.8,
+            "outcome_driven": 0.75
+          },
+          "attribution_style": "priorities_differ"
+        }
+      ]
+    },
+    {
+      "id": "ce22_conflict_escalation_self",
+      "question": "You've ignored someone's repeated requests. Most likely reason:",
+      "context": ["Social"],
+      "mirror_of": "ce21_conflict_escalation_third",
+      "trait_probed": "attribution_bias",
+      "second_person": true,
+      "as_tu_test": "self",
+      "expected_asymmetry": "self_situational_other_dispositional",
+      "options": [
+        {
+          "label": "A",
+          "text": "I was genuinely busy and forgot",
+          "traits": {
+            "external_prompts": 0.8,
+            "present_situational": 0.75
+          }
+        },
+        {
+          "label": "B",
+          "text": "I don't think their requests are priorities",
+          "traits": {
+            "boundary_asserting": 0.9,
+            "principle_driven": 0.85,
+            "outcome_driven": 0.75
+          }
+        },
+        {
+          "label": "C",
+          "text": "I'm avoiding confrontation about why I can't do them",
+          "traits": {
+            "confrontation_averse": 0.95,
+            "context_dependent_comm": 0.8
+          }
+        }
+      ]
+    },
+    {
+      "id": "ce23_success_attribution_agency",
+      "question": "You succeed at something difficult. Your first thought:",
+      "context": ["Emotional"],
+      "mirror_of": "ce24_success_attribution_relief",
+      "trait_probed": "locus_of_control",
+      "emotional_frame": "agency",
+      "options": [
+        {
+          "label": "A",
+          "text": "I knew I could do it",
+          "traits": {
+            "control_seeking": 0.9,
+            "reward_seeking": 0.85,
+            "belief_stability": 0.75
+          }
+        },
+        {
+          "label": "B",
+          "text": "I'm relieved it worked out",
+          "traits": {
+            "loss_avoidance": 0.9,
+            "emotion_first": 0.85,
+            "ambiguity_tolerant": 0.7
+          }
+        },
+        {
+          "label": "C",
+          "text": "That was harder than expected",
+          "traits": {
+            "analytical_parsing": 0.85,
+            "belief_plasticity": 0.8,
+            "challenge_seeking": 0.7
+          }
+        }
+      ]
+    },
+    {
+      "id": "ce24_success_attribution_relief",
+      "question": "After a big win, what emotion comes first?",
+      "context": ["Emotional"],
+      "mirror_of": "ce23_success_attribution_agency",
+      "trait_probed": "locus_of_control",
+      "emotional_frame": "relief",
+      "expected_correlation": "positive",
+      "options": [
+        {
+          "label": "A",
+          "text": "Pride in what I accomplished",
+          "traits": {
+            "reward_seeking": 0.95,
+            "control_seeking": 0.85,
+            "emotion_first": 0.75
+          }
+        },
+        {
+          "label": "B",
+          "text": "Relief that it's over",
+          "traits": {
+            "loss_avoidance": 0.95,
+            "emotion_first": 0.9,
+            "completion_oriented": 0.75
+          }
+        },
+        {
+          "label": "C",
+          "text": "Excitement to tackle the next thing",
+          "traits": {
+            "reward_seeking": 0.9,
+            "challenge_seeking": 0.9,
+            "exploration_oriented": 0.85
+          }
+        }
+      ]
+    }
+  ],
+  "mirror_pairs": [
+    {
+      "vignette1": "ce01_control_taking",
+      "vignette2": "ce02_control_intrusion",
+      "trait_probed": "control_seeking",
+      "expected_correlation": "negative",
+      "inconsistent_patterns": [
+        {"v1": "A", "v2": "A", "flag": "LatentContradiction"},
+        {"v1": "B", "v2": "B", "flag": "LatentContradiction"}
+      ]
+    },
+    {
+      "vignette1": "ce03_decision_speed",
+      "vignette2": "ce04_decision_regret",
+      "trait_probed": "risk_sampling",
+      "expected_correlation": "positive",
+      "inconsistent_patterns": [
+        {"v1": "A", "v2": "A", "flag": "ConsistentRiskTaker"},
+        {"v1": "B", "v2": "B", "flag": "ConsistentRiskAverse"},
+        {"v1": "A", "v2": "B", "flag": "LatentContradiction"}
+      ]
+    },
+    {
+      "vignette1": "ce05_self_cancel",
+      "vignette2": "ce06_other_cancel",
+      "trait_probed": "attribution_bias",
+      "expected_asymmetry": "fundamental_attribution_error",
+      "as_tu_measure": true,
+      "inconsistent_patterns": [
+        {"v1": "A", "v2": "C", "flag": "SelfOtherAsymmetry"},
+        {"v1": "B", "v2": "C", "flag": "SelfOtherAsymmetry"}
+      ]
+    },
+    {
+      "vignette1": "ce07_interrupt_third",
+      "vignette2": "ce08_interrupt_self",
+      "trait_probed": "intent_inference",
+      "expected_asymmetry": "theory_of_mind_bias",
+      "as_tu_measure": true
+    },
+    {
+      "vignette1": "ce09_authority_expertise",
+      "vignette2": "ce10_authority_consensus",
+      "trait_probed": "authority_skeptical",
+      "expected_correlation": "positive",
+      "inconsistent_patterns": [
+        {"v1": "A", "v2": "B", "flag": "LatentContradiction"},
+        {"v1": "B", "v2": "A", "flag": "LatentContradiction"}
+      ]
+    },
+    {
+      "vignette1": "ce11_praise_agency",
+      "vignette2": "ce12_blame_agency",
+      "trait_probed": "locus_of_control",
+      "expected_asymmetry": "self_serving_bias",
+      "emotional_valence_flip": true
+    },
+    {
+      "vignette1": "ce13_deadline_pressure",
+      "vignette2": "ce14_deadline_outcome",
+      "trait_probed": "deadline_driven",
+      "expected_correlation": "positive"
+    },
+    {
+      "vignette1": "ce15_conflict_initiate",
+      "vignette2": "ce16_conflict_response",
+      "trait_probed": "confrontation_tolerant",
+      "expected_correlation": "positive"
+    },
+    {
+      "vignette1": "ce17_commitment_forced",
+      "vignette2": "ce18_commitment_regret",
+      "trait_probed": "pre_commitment",
+      "expected_correlation": "negative",
+      "emotional_valence_flip": true
+    },
+    {
+      "vignette1": "ce19_delegation_forced",
+      "vignette2": "ce20_delegation_feeling",
+      "trait_probed": "control_seeking",
+      "expected_correlation": "positive",
+      "emotional_frame_shift": "forced_choice_to_irritation"
+    },
+    {
+      "vignette1": "ce21_conflict_escalation_third",
+      "vignette2": "ce22_conflict_escalation_self",
+      "trait_probed": "attribution_bias",
+      "expected_asymmetry": "fundamental_attribution_error",
+      "as_tu_measure": true
+    },
+    {
+      "vignette1": "ce23_success_attribution_agency",
+      "vignette2": "ce24_success_attribution_relief",
+      "trait_probed": "locus_of_control",
+      "expected_correlation": "positive",
+      "emotional_frame_shift": "agency_to_relief"
+    }
+  ],
+  "hedging_markers": [
+    "ce03_decision_speed:C",
+    "ce17_commitment_forced:C",
+    "ce19_delegation_forced:C",
+    "v07:C"
+  ],
+  "social_desirability_traps": [
+    "ce06_other_cancel:A",
+    "ce08_interrupt_self:B",
+    "ce11_praise_agency:A"
+  ]
+}

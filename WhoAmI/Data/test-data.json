@@ -1,0 +1,1897 @@
+{
+  "traits": [
+    {
+      "id": "analytical_parsing",
+      "name": "Analytical Parsing",
+      "category": "Cognitive",
+      "description": "Breaks problems into discrete components for systematic analysis"
+    },
+    {
+      "id": "holistic_sensing",
+      "name": "Holistic Sensing",
+      "category": "Cognitive",
+      "description": "Perceives situations as unified wholes rather than component parts"
+    },
+    {
+      "id": "bottom_up",
+      "name": "Bottom-Up Processing",
+      "category": "Cognitive",
+      "description": "Builds understanding from specific details to general patterns"
+    },
+    {
+      "id": "top_down",
+      "name": "Top-Down Processing",
+      "category": "Cognitive",
+      "description": "Applies general frameworks to interpret specific situations"
+    },
+    {
+      "id": "rule_first",
+      "name": "Rule-First Reasoning",
+      "category": "Cognitive",
+      "description": "Seeks general principles before making decisions"
+    },
+    {
+      "id": "exception_first",
+      "name": "Exception-First Reasoning",
+      "category": "Cognitive",
+      "description": "Considers unique circumstances before applying general rules"
+    },
+    {
+      "id": "literal_interpretation",
+      "name": "Literal Interpretation",
+      "category": "Cognitive",
+      "description": "Takes communication at face value"
+    },
+    {
+      "id": "implied_meaning",
+      "name": "Implied Meaning Detection",
+      "category": "Cognitive",
+      "description": "Reads between the lines for unstated intentions"
+    },
+    {
+      "id": "precision_seeking",
+      "name": "Precision Seeking",
+      "category": "Cognitive",
+      "description": "Values exact specifications and clear boundaries"
+    },
+    {
+      "id": "approximation_tolerant",
+      "name": "Approximation Tolerant",
+      "category": "Cognitive",
+      "description": "Comfortable with rough estimates and fuzzy categories"
+    },
+    {
+      "id": "model_building",
+      "name": "Model Building",
+      "category": "Cognitive",
+      "description": "Creates abstract frameworks to understand phenomena"
+    },
+    {
+      "id": "example_driven",
+      "name": "Example Driven",
+      "category": "Cognitive",
+      "description": "Learns through concrete instances and case studies"
+    },
+    {
+      "id": "future_projection",
+      "name": "Future Projection",
+      "category": "Temporal",
+      "description": "Focuses on long-term outcomes and distant goals"
+    },
+    {
+      "id": "present_situational",
+      "name": "Present Situational",
+      "category": "Temporal",
+      "description": "Attends to immediate circumstances and current state"
+    },
+    {
+      "id": "long_horizon",
+      "name": "Long Horizon",
+      "category": "Temporal",
+      "description": "Plans across extended timeframes"
+    },
+    {
+      "id": "short_cycle",
+      "name": "Short Cycle",
+      "category": "Temporal",
+      "description": "Works in quick iterations with frequent adjustments"
+    },
+    {
+      "id": "deadline_driven",
+      "name": "Deadline Driven",
+      "category": "Temporal",
+      "description": "Activated by time pressure and fixed endpoints"
+    },
+    {
+      "id": "steady_pace",
+      "name": "Steady Pace",
+      "category": "Temporal",
+      "description": "Maintains consistent effort independent of deadlines"
+    },
+    {
+      "id": "sequence_dependent",
+      "name": "Sequence Dependent",
+      "category": "Temporal",
+      "description": "Follows predetermined step-by-step plans"
+    },
+    {
+      "id": "opportunistic_planning",
+      "name": "Opportunistic Planning",
+      "category": "Temporal",
+      "description": "Adapts plans based on emerging opportunities"
+    },
+    {
+      "id": "pre_commitment",
+      "name": "Pre-Commitment",
+      "category": "Temporal",
+      "description": "Makes advance decisions to constrain future choices"
+    },
+    {
+      "id": "optionality_preservation",
+      "name": "Optionality Preservation",
+      "category": "Temporal",
+      "description": "Keeps multiple options open as long as possible"
+    },
+    {
+      "id": "reward_seeking",
+      "name": "Reward Seeking",
+      "category": "Motivation",
+      "description": "Motivated by potential gains and positive outcomes"
+    },
+    {
+      "id": "loss_avoidance",
+      "name": "Loss Avoidance",
+      "category": "Motivation",
+      "description": "Motivated by preventing negative outcomes"
+    },
+    {
+      "id": "intrinsic_goals",
+      "name": "Intrinsic Goals",
+      "category": "Motivation",
+      "description": "Pursues activities for inherent satisfaction"
+    },
+    {
+      "id": "external_prompts",
+      "name": "External Prompts",
+      "category": "Motivation",
+      "description": "Responds to environmental cues and social expectations"
+    },
+    {
+      "id": "challenge_seeking",
+      "name": "Challenge Seeking",
+      "category": "Motivation",
+      "description": "Drawn to difficult problems and growth opportunities"
+    },
+    {
+      "id": "stability_seeking",
+      "name": "Stability Seeking",
+      "category": "Motivation",
+      "description": "Values predictability and established routines"
+    },
+    {
+      "id": "completion_oriented",
+      "name": "Completion Oriented",
+      "category": "Motivation",
+      "description": "Focuses on finishing tasks and achieving closure"
+    },
+    {
+      "id": "exploration_oriented",
+      "name": "Exploration Oriented",
+      "category": "Motivation",
+      "description": "Prioritizes discovering new possibilities over finishing"
+    },
+    {
+      "id": "initiates_interaction",
+      "name": "Initiates Interaction",
+      "category": "Social",
+      "description": "Proactively starts social exchanges"
+    },
+    {
+      "id": "responds_to_interaction",
+      "name": "Responds to Interaction",
+      "category": "Social",
+      "description": "Engages when others initiate contact"
+    },
+    {
+      "id": "explicit_verbalization",
+      "name": "Explicit Verbalization",
+      "category": "Social",
+      "description": "States intentions and expectations directly"
+    },
+    {
+      "id": "context_dependent_comm",
+      "name": "Context-Dependent Communication",
+      "category": "Social",
+      "description": "Relies on shared understanding and implicit signals"
+    },
+    {
+      "id": "boundary_asserting",
+      "name": "Boundary Asserting",
+      "category": "Social",
+      "description": "Clearly states personal limits and needs"
+    },
+    {
+      "id": "boundary_probing",
+      "name": "Boundary Probing",
+      "category": "Social",
+      "description": "Tests implicit social boundaries through interaction"
+    },
+    {
+      "id": "confrontation_tolerant",
+      "name": "Confrontation Tolerant",
+      "category": "Social",
+      "description": "Comfortable with direct disagreement and conflict"
+    },
+    {
+      "id": "confrontation_averse",
+      "name": "Confrontation Averse",
+      "category": "Social",
+      "description": "Avoids direct conflict and seeks harmony"
+    },
+    {
+      "id": "emotion_first",
+      "name": "Emotion First",
+      "category": "Emotional",
+      "description": "Emotional reactions precede cognitive processing"
+    },
+    {
+      "id": "emotion_post_processed",
+      "name": "Emotion Post-Processed",
+      "category": "Emotional",
+      "description": "Cognitive analysis precedes emotional experience"
+    },
+    {
+      "id": "affect_driven",
+      "name": "Affect Driven",
+      "category": "Emotional",
+      "description": "Decisions heavily influenced by emotional state"
+    },
+    {
+      "id": "affect_filtered",
+      "name": "Affect Filtered",
+      "category": "Emotional",
+      "description": "Separates emotional reactions from decision logic"
+    },
+    {
+      "id": "rapid_emotional_labeling",
+      "name": "Rapid Emotional Labeling",
+      "category": "Emotional",
+      "description": "Quickly identifies and names emotional states"
+    },
+    {
+      "id": "delayed_emotional_recognition",
+      "name": "Delayed Emotional Recognition",
+      "category": "Emotional",
+      "description": "Takes time to identify what they're feeling"
+    },
+    {
+      "id": "ambiguity_tolerant",
+      "name": "Ambiguity Tolerant",
+      "category": "Risk",
+      "description": "Comfortable with unclear situations and incomplete information"
+    },
+    {
+      "id": "ambiguity_intolerant",
+      "name": "Ambiguity Intolerant",
+      "category": "Risk",
+      "description": "Seeks clarity and complete information before proceeding"
+    },
+    {
+      "id": "control_seeking",
+      "name": "Control Seeking",
+      "category": "Risk",
+      "description": "Maintains direct oversight of important outcomes"
+    },
+    {
+      "id": "trust_delegating",
+      "name": "Trust Delegating",
+      "category": "Risk",
+      "description": "Comfortable relying on others for critical tasks"
+    },
+    {
+      "id": "risk_sampling",
+      "name": "Risk Sampling",
+      "category": "Risk",
+      "description": "Takes calculated risks to gather information"
+    },
+    {
+      "id": "risk_filtering",
+      "name": "Risk Filtering",
+      "category": "Risk",
+      "description": "Avoids uncertain situations until more data available"
+    },
+    {
+      "id": "redundancy_building",
+      "name": "Redundancy Building",
+      "category": "Risk",
+      "description": "Creates backup plans and safety margins"
+    },
+    {
+      "id": "single_path",
+      "name": "Single Path",
+      "category": "Risk",
+      "description": "Commits to one approach and optimizes it"
+    },
+    {
+      "id": "iteration_first",
+      "name": "Iteration First",
+      "category": "Execution",
+      "description": "Starts with quick attempts and refines through feedback"
+    },
+    {
+      "id": "specification_first",
+      "name": "Specification First",
+      "category": "Execution",
+      "description": "Plans comprehensively before taking action"
+    },
+    {
+      "id": "self_interruptible",
+      "name": "Self-Interruptible",
+      "category": "Execution",
+      "description": "Easily shifts between tasks as needs arise"
+    },
+    {
+      "id": "focus_lock",
+      "name": "Focus Lock",
+      "category": "Execution",
+      "description": "Maintains deep concentration on single task"
+    },
+    {
+      "id": "task_batching",
+      "name": "Task Batching",
+      "category": "Execution",
+      "description": "Groups similar activities for efficiency"
+    },
+    {
+      "id": "task_streaming",
+      "name": "Task Streaming",
+      "category": "Execution",
+      "description": "Handles items individually as they arrive"
+    },
+    {
+      "id": "optimization_seeking",
+      "name": "Optimization Seeking",
+      "category": "Execution",
+      "description": "Continuously improves processes for maximum efficiency"
+    },
+    {
+      "id": "sufficiency_seeking",
+      "name": "Sufficiency Seeking",
+      "category": "Execution",
+      "description": "Stops when solution meets requirements"
+    },
+    {
+      "id": "principle_driven",
+      "name": "Principle Driven",
+      "category": "Belief",
+      "description": "Adheres to core values regardless of outcomes"
+    },
+    {
+      "id": "outcome_driven",
+      "name": "Outcome Driven",
+      "category": "Belief",
+      "description": "Adjusts approach based on results"
+    },
+    {
+      "id": "belief_stability",
+      "name": "Belief Stability",
+      "category": "Belief",
+      "description": "Maintains consistent views over time"
+    },
+    {
+      "id": "belief_plasticity",
+      "name": "Belief Plasticity",
+      "category": "Belief",
+      "description": "Updates beliefs readily with new information"
+    },
+    {
+      "id": "authority_skeptical",
+      "name": "Authority Skeptical",
+      "category": "Belief",
+      "description": "Questions conventional wisdom and expert claims"
+    },
+    {
+      "id": "authority_anchored",
+      "name": "Authority Anchored",
+      "category": "Belief",
+      "description": "Trusts established expertise and credentials"
+    }
+  ],
+  "vignettes": [
+    {
+      "id": "v01",
+      "question": "You're trying to fix something that's broken. Which approach feels most natural?",
+      "context": ["Problem-solving"],
+      "options": [
+        {
+          "label": "A",
+          "text": "Carefully examine it to understand what went wrong",
+          "traits": {
+            "analytical_parsing": 0.9,
+            "bottom_up": 0.8,
+            "model_building": 0.7,
+            "control_seeking": 0.6
+          }
+        },
+        {
+          "label": "B",
+          "text": "Try different solutions and see what works",
+          "traits": {
+            "iteration_first": 0.9,
+            "risk_sampling": 0.8,
+            "example_driven": 0.7,
+            "self_interruptible": 0.6
+          }
+        },
+        {
+          "label": "C",
+          "text": "Look up instructions or ask someone who knows",
+          "traits": {
+            "trust_delegating": 0.9,
+            "external_prompts": 0.8,
+            "authority_anchored": 0.7,
+            "risk_filtering": 0.6
+          }
+        }
+      ]
+    },
+    {
+      "id": "v02",
+      "question": "When someone says 'let's do this sometime,' you typically...",
+      "context": ["Social"],
+      "options": [
+        {
+          "label": "A",
+          "text": "Assume they mean it and expect to make concrete plans",
+          "traits": {
+            "literal_interpretation": 0.9,
+            "explicit_verbalization": 0.8,
+            "ambiguity_intolerant": 0.7,
+            "initiates_interaction": 0.6
+          }
+        },
+        {
+          "label": "B",
+          "text": "Recognize it as friendly talk, not a real commitment",
+          "traits": {
+            "implied_meaning": 0.9,
+            "context_dependent_comm": 0.8,
+            "ambiguity_tolerant": 0.7
+          }
+        },
+        {
+          "label": "C",
+          "text": "Wait to see if they bring it up again",
+          "traits": {
+            "responds_to_interaction": 0.9,
+            "optionality_preservation": 0.8,
+            "external_prompts": 0.7
+          }
+        }
+      ]
+    },
+    {
+      "id": "v03",
+      "question": "When making an important decision, you naturally rely most on...",
+      "context": ["Decision-making"],
+      "options": [
+        {
+          "label": "A",
+          "text": "Logical analysis of pros and cons",
+          "traits": {
+            "analytical_parsing": 0.9,
+            "affect_filtered": 0.8,
+            "model_building": 0.7,
+            "control_seeking": 0.6
+          }
+        },
+        {
+          "label": "B",
+          "text": "Your gut feeling about what's right",
+          "traits": {
+            "holistic_sensing": 0.9,
+            "affect_driven": 0.8,
+            "emotion_first": 0.7
+          }
+        },
+        {
+          "label": "C",
+          "text": "Practical outcomes and what actually works",
+          "traits": {
+            "outcome_driven": 0.9,
+            "sufficiency_seeking": 0.8
+          }
+        }
+      ]
+    },
+    {
+      "id": "v04",
+      "question": "You have free time with no plans. You're most likely to...",
+      "context": ["Leisure"],
+      "options": [
+        {
+          "label": "A",
+          "text": "Do whatever feels appealing in the moment",
+          "traits": {
+            "present_situational": 0.9,
+            "intrinsic_goals": 0.8,
+            "self_interruptible": 0.7,
+            "exploration_oriented": 0.6
+          }
+        },
+        {
+          "label": "B",
+          "text": "Work on something productive you've been meaning to do",
+          "traits": {
+            "completion_oriented": 0.9,
+            "intrinsic_goals": 0.8,
+            "future_projection": 0.6
+          }
+        },
+        {
+          "label": "C",
+          "text": "Enjoy the unstructured time without forcing activity",
+          "traits": {
+            "optionality_preservation": 0.9,
+            "ambiguity_tolerant": 0.8,
+            "present_situational": 0.7
+          }
+        }
+      ]
+    },
+    {
+      "id": "v05",
+      "question": "Someone criticizes you unexpectedly. Your first internal response is...",
+      "context": ["Emotional", "Conflict"],
+      "options": [
+        {
+          "label": "A",
+          "text": "An emotional reaction - hurt, defensive, or upset",
+          "traits": {
+            "emotion_first": 0.9,
+            "affect_driven": 0.8,
+            "rapid_emotional_labeling": 0.7
+          }
+        },
+        {
+          "label": "B",
+          "text": "Evaluating whether their criticism is valid",
+          "traits": {
+            "emotion_post_processed": 0.9,
+            "affect_filtered": 0.8,
+            "analytical_parsing": 0.7,
+            "authority_skeptical": 0.6
+          }
+        },
+        {
+          "label": "C",
+          "text": "Wanting to understand exactly what they mean",
+          "traits": {
+            "explicit_verbalization": 0.9,
+            "precision_seeking": 0.8,
+            "confrontation_tolerant": 0.7
+          }
+        }
+      ]
+    },
+    {
+      "id": "v06",
+      "question": "Starting a complex project, you feel ready when...",
+      "context": ["Work", "Planning"],
+      "options": [
+        {
+          "label": "A",
+          "text": "You have a clear plan and know the major steps",
+          "traits": {
+            "specification_first": 0.9,
+            "ambiguity_intolerant": 0.8,
+            "sequence_dependent": 0.7,
+            "control_seeking": 0.6
+          }
+        },
+        {
+          "label": "B",
+          "text": "You understand the goal and can start figuring it out",
+          "traits": {
+            "iteration_first": 0.9,
+            "ambiguity_tolerant": 0.8,
+            "outcome_driven": 0.7
+          }
+        },
+        {
+          "label": "C",
+          "text": "The deadline makes it urgent to begin",
+          "traits": {
+            "deadline_driven": 0.9,
+            "external_prompts": 0.8,
+            "present_situational": 0.7
+          }
+        }
+      ]
+    },
+    {
+      "id": "v07",
+      "question": "Your team disagrees on the best approach. You tend to...",
+      "context": ["Work", "Conflict"],
+      "options": [
+        {
+          "label": "A",
+          "text": "Trust the most experienced person's judgment",
+          "traits": {
+            "authority_anchored": 0.9,
+            "trust_delegating": 0.8
+          }
+        },
+        {
+          "label": "B",
+          "text": "Evaluate each option on its own merits",
+          "traits": {
+            "authority_skeptical": 0.9,
+            "analytical_parsing": 0.8,
+            "control_seeking": 0.7,
+            "principle_driven": 0.6
+          }
+        },
+        {
+          "label": "C",
+          "text": "Look for a compromise everyone can accept",
+          "traits": {
+            "confrontation_averse": 0.9,
+            "holistic_sensing": 0.7
+          }
+        }
+      ]
+    },
+    {
+      "id": "v08",
+      "question": "Learning new software, you prefer to...",
+      "context": ["Learning"],
+      "options": [
+        {
+          "label": "A",
+          "text": "Follow a tutorial or examples",
+          "traits": {
+            "example_driven": 0.9,
+            "bottom_up": 0.8
+          }
+        },
+        {
+          "label": "B",
+          "text": "Read about how the system works overall",
+          "traits": {
+            "model_building": 0.9,
+            "top_down": 0.8,
+            "rule_first": 0.7
+          }
+        },
+        {
+          "label": "C",
+          "text": "Explore and experiment to figure it out",
+          "traits": {
+            "iteration_first": 0.9,
+            "risk_sampling": 0.8,
+            "exploration_oriented": 0.7,
+            "intrinsic_goals": 0.6
+          }
+        }
+      ]
+    },
+    {
+      "id": "v09",
+      "question": "A friend seems upset but says they're fine. You...",
+      "context": ["Social", "Emotional"],
+      "options": [
+        {
+          "label": "A",
+          "text": "Take their words at face value",
+          "traits": {
+            "literal_interpretation": 0.9,
+            "boundary_asserting": 0.8
+          }
+        },
+        {
+          "label": "B",
+          "text": "Gently check in to see if they want to talk",
+          "traits": {
+            "implied_meaning": 0.9,
+            "boundary_probing": 0.8,
+            "context_dependent_comm": 0.7,
+            "initiates_interaction": 0.6
+          }
+        },
+        {
+          "label": "C",
+          "text": "Let them know you're available if needed",
+          "traits": {
+            "responds_to_interaction": 0.9,
+            "boundary_asserting": 0.7
+          }
+        }
+      ]
+    },
+    {
+      "id": "v10",
+      "question": "Halfway through a task, you realize a better approach. You typically...",
+      "context": ["Work", "Execution"],
+      "options": [
+        {
+          "label": "A",
+          "text": "Switch to the better method right away",
+          "traits": {
+            "self_interruptible": 0.9,
+            "optimization_seeking": 0.8,
+            "belief_plasticity": 0.7
+          }
+        },
+        {
+          "label": "B",
+          "text": "Finish the current approach first",
+          "traits": {
+            "focus_lock": 0.9,
+            "completion_oriented": 0.8,
+            "sequence_dependent": 0.7
+          }
+        },
+        {
+          "label": "C",
+          "text": "Weigh if the improvement is worth restarting",
+          "traits": {
+            "outcome_driven": 0.9,
+            "analytical_parsing": 0.8
+          }
+        }
+      ]
+    },
+    {
+      "id": "v11",
+      "question": "Invited to an event where you won't know anyone. Your gut reaction is...",
+      "context": ["Social", "Risk"],
+      "options": [
+        {
+          "label": "A",
+          "text": "Interested - could be fun to meet new people",
+          "traits": {
+            "risk_sampling": 0.9,
+            "challenge_seeking": 0.8,
+            "exploration_oriented": 0.7,
+            "reward_seeking": 0.6
+          }
+        },
+        {
+          "label": "B",
+          "text": "Cautious - want more details before deciding",
+          "traits": {
+            "risk_filtering": 0.9,
+            "ambiguity_intolerant": 0.8,
+            "control_seeking": 0.7
+          }
+        },
+        {
+          "label": "C",
+          "text": "Hesitant - prefer events where you know people",
+          "traits": {
+            "risk_filtering": 0.9,
+            "stability_seeking": 0.8
+          }
+        }
+      ]
+    },
+    {
+      "id": "v12",
+      "question": "You notice something that might become a problem later. You...",
+      "context": ["Risk", "Problem-solving"],
+      "options": [
+        {
+          "label": "A",
+          "text": "Address it now to prevent future issues",
+          "traits": {
+            "future_projection": 0.9,
+            "loss_avoidance": 0.8,
+            "redundancy_building": 0.7
+          }
+        },
+        {
+          "label": "B",
+          "text": "Deal with it if and when it actually becomes a problem",
+          "traits": {
+            "present_situational": 0.9,
+            "sufficiency_seeking": 0.8
+          }
+        },
+        {
+          "label": "C",
+          "text": "Keep an eye on it but don't act prematurely",
+          "traits": {
+            "opportunistic_planning": 0.9,
+            "ambiguity_tolerant": 0.8
+          }
+        }
+      ]
+    },
+    {
+      "id": "v13",
+      "question": "You need to decide but don't have all the information. You...",
+      "context": ["Decision-making"],
+      "options": [
+        {
+          "label": "A",
+          "text": "Wait until you can get more information",
+          "traits": {
+            "ambiguity_intolerant": 0.9,
+            "risk_filtering": 0.8,
+            "control_seeking": 0.7
+          }
+        },
+        {
+          "label": "B",
+          "text": "Make your best judgment with what you have",
+          "traits": {
+            "ambiguity_tolerant": 0.9,
+            "risk_sampling": 0.8,
+            "outcome_driven": 0.7
+          }
+        },
+        {
+          "label": "C",
+          "text": "Consult someone else or get their input",
+          "traits": {
+            "trust_delegating": 0.9,
+            "responds_to_interaction": 0.8
+          }
+        }
+      ]
+    },
+    {
+      "id": "v14",
+      "question": "Everyone in a group agrees on something you think is wrong. You...",
+      "context": ["Work", "Conflict"],
+      "options": [
+        {
+          "label": "A",
+          "text": "Voice your disagreement openly",
+          "traits": {
+            "confrontation_tolerant": 0.9,
+            "boundary_asserting": 0.8,
+            "explicit_verbalization": 0.8,
+            "principle_driven": 0.7
+          }
+        },
+        {
+          "label": "B",
+          "text": "Go along with the group decision",
+          "traits": {
+            "confrontation_averse": 0.9,
+            "authority_anchored": 0.7,
+            "external_prompts": 0.6
+          }
+        },
+        {
+          "label": "C",
+          "text": "Raise it privately with someone afterward",
+          "traits": {
+            "context_dependent_comm": 0.9,
+            "confrontation_averse": 0.8
+          }
+        }
+      ]
+    },
+    {
+      "id": "v15",
+      "question": "In a presentation, something isn't clear to you. You...",
+      "context": ["Learning", "Social"],
+      "options": [
+        {
+          "label": "A",
+          "text": "Ask questions to clarify",
+          "traits": {
+            "explicit_verbalization": 0.9,
+            "precision_seeking": 0.8,
+            "initiates_interaction": 0.7
+          }
+        },
+        {
+          "label": "B",
+          "text": "Look it up or figure it out on your own later",
+          "traits": {
+            "intrinsic_goals": 0.9,
+            "responds_to_interaction": 0.8,
+            "control_seeking": 0.7
+          }
+        },
+        {
+          "label": "C",
+          "text": "Assume it'll become clear as they continue",
+          "traits": {
+            "ambiguity_tolerant": 0.9,
+            "external_prompts": 0.8
+          }
+        }
+      ]
+    },
+    {
+      "id": "v16",
+      "question": "You have multiple unrelated tasks today. You tend to...",
+      "context": ["Work", "Execution"],
+      "options": [
+        {
+          "label": "A",
+          "text": "Plan an efficient order to complete them all",
+          "traits": {
+            "task_batching": 0.9,
+            "optimization_seeking": 0.8,
+            "specification_first": 0.7
+          }
+        },
+        {
+          "label": "B",
+          "text": "Handle them flexibly as opportunities arise",
+          "traits": {
+            "task_streaming": 0.9,
+            "opportunistic_planning": 0.8,
+            "present_situational": 0.7
+          }
+        },
+        {
+          "label": "C",
+          "text": "Do the most urgent or important ones first",
+          "traits": {
+            "deadline_driven": 0.9,
+            "outcome_driven": 0.8
+          }
+        }
+      ]
+    },
+    {
+      "id": "v17",
+      "question": "You realize you've been wrong about something. Your typical response is...",
+      "context": ["Learning", "Emotional"],
+      "options": [
+        {
+          "label": "A",
+          "text": "Frustrated with yourself for the mistake",
+          "traits": {
+            "emotion_first": 0.9,
+            "loss_avoidance": 0.8
+          }
+        },
+        {
+          "label": "B",
+          "text": "Curious about why you had it wrong",
+          "traits": {
+            "belief_plasticity": 0.9,
+            "challenge_seeking": 0.8,
+            "analytical_parsing": 0.7
+          }
+        },
+        {
+          "label": "C",
+          "text": "Glad to know the correct information now",
+          "traits": {
+            "outcome_driven": 0.9,
+            "belief_plasticity": 0.8
+          }
+        }
+      ]
+    },
+    {
+      "id": "v18",
+      "question": "Someone suggests a different way to do something you're working on. You...",
+      "context": ["Work", "Social"],
+      "options": [
+        {
+          "label": "A",
+          "text": "Consider their suggestion seriously",
+          "traits": {
+            "belief_plasticity": 0.9,
+            "responds_to_interaction": 0.8
+          }
+        },
+        {
+          "label": "B",
+          "text": "Stick with your approach that works",
+          "traits": {
+            "belief_stability": 0.9,
+            "control_seeking": 0.7
+          }
+        },
+        {
+          "label": "C",
+          "text": "Try it to see if it's actually better",
+          "traits": {
+            "iteration_first": 0.9,
+            "outcome_driven": 0.8
+          }
+        }
+      ]
+    },
+    {
+      "id": "v19",
+      "question": "You've made something that works but isn't perfect. You...",
+      "context": ["Work", "Execution"],
+      "options": [
+        {
+          "label": "A",
+          "text": "Keep refining it until it's really good",
+          "traits": {
+            "optimization_seeking": 0.9,
+            "challenge_seeking": 0.8,
+            "intrinsic_goals": 0.7
+          }
+        },
+        {
+          "label": "B",
+          "text": "Move on - it does what it needs to",
+          "traits": {
+            "sufficiency_seeking": 0.9,
+            "completion_oriented": 0.8,
+            "outcome_driven": 0.7
+          }
+        },
+        {
+          "label": "C",
+          "text": "Decide based on how important it is",
+          "traits": {
+            "outcome_driven": 0.9,
+            "opportunistic_planning": 0.7
+          }
+        }
+      ]
+    },
+    {
+      "id": "v20",
+      "question": "At a networking event where you know nobody, you naturally...",
+      "context": ["Social"],
+      "options": [
+        {
+          "label": "A",
+          "text": "Introduce yourself and start conversations",
+          "traits": {
+            "initiates_interaction": 0.9,
+            "explicit_verbalization": 0.8,
+            "risk_sampling": 0.7
+          }
+        },
+        {
+          "label": "B",
+          "text": "Join conversations when there's an opening",
+          "traits": {
+            "responds_to_interaction": 0.9,
+            "context_dependent_comm": 0.8,
+            "boundary_probing": 0.7
+          }
+        },
+        {
+          "label": "C",
+          "text": "Observe and stay toward the periphery",
+          "traits": {
+            "responds_to_interaction": 0.9,
+            "risk_filtering": 0.7,
+            "stability_seeking": 0.6
+          }
+        }
+      ]
+    },
+    {
+      "id": "v21",
+      "question": "You have a strong opinion but others disagree. You...",
+      "context": ["Social", "Conflict"],
+      "options": [
+        {
+          "label": "A",
+          "text": "Argue your position with reasoning",
+          "traits": {
+            "confrontation_tolerant": 0.9,
+            "explicit_verbalization": 0.8,
+            "principle_driven": 0.8
+          }
+        },
+        {
+          "label": "B",
+          "text": "Listen and reconsider your view",
+          "traits": {
+            "belief_plasticity": 0.9,
+            "responds_to_interaction": 0.8
+          }
+        },
+        {
+          "label": "C",
+          "text": "Keep your opinion but avoid arguing",
+          "traits": {
+            "confrontation_averse": 0.9,
+            "principle_driven": 0.7
+          }
+        }
+      ]
+    },
+    {
+      "id": "v22",
+      "question": "You want to learn something new. You typically...",
+      "context": ["Learning", "Leisure"],
+      "options": [
+        {
+          "label": "A",
+          "text": "Study the fundamentals and theory first",
+          "traits": {
+            "specification_first": 0.9,
+            "model_building": 0.8,
+            "top_down": 0.7
+          }
+        },
+        {
+          "label": "B",
+          "text": "Jump in and learn by doing",
+          "traits": {
+            "iteration_first": 0.9,
+            "risk_sampling": 0.8,
+            "example_driven": 0.7,
+            "intrinsic_goals": 0.6
+          }
+        },
+        {
+          "label": "C",
+          "text": "Find someone knowledgeable to teach you",
+          "traits": {
+            "trust_delegating": 0.9,
+            "authority_anchored": 0.8,
+            "responds_to_interaction": 0.7
+          }
+        }
+      ]
+    },
+    {
+      "id": "v23",
+      "question": "A task is taking much longer than expected. You...",
+      "context": ["Work", "Stress"],
+      "options": [
+        {
+          "label": "A",
+          "text": "Push harder to meet the original timeline",
+          "traits": {
+            "deadline_driven": 0.9,
+            "completion_oriented": 0.8
+          }
+        },
+        {
+          "label": "B",
+          "text": "Adjust your timeline realistically",
+          "traits": {
+            "opportunistic_planning": 0.9,
+            "outcome_driven": 0.8,
+            "belief_plasticity": 0.7
+          }
+        },
+        {
+          "label": "C",
+          "text": "Feel stressed about the delay",
+          "traits": {
+            "emotion_first": 0.9,
+            "loss_avoidance": 0.8,
+            "affect_driven": 0.7
+          }
+        }
+      ]
+    },
+    {
+      "id": "v24",
+      "question": "Teaching someone something complex, you naturally...",
+      "context": ["Social", "Learning"],
+      "options": [
+        {
+          "label": "A",
+          "text": "Walk through specific examples step-by-step",
+          "traits": {
+            "bottom_up": 0.9,
+            "example_driven": 0.8,
+            "explicit_verbalization": 0.7
+          }
+        },
+        {
+          "label": "B",
+          "text": "Explain the overall concept first, then details",
+          "traits": {
+            "top_down": 0.9,
+            "model_building": 0.8,
+            "holistic_sensing": 0.7
+          }
+        },
+        {
+          "label": "C",
+          "text": "Use analogies to things they already know",
+          "traits": {
+            "example_driven": 0.9,
+            "context_dependent_comm": 0.8,
+            "holistic_sensing": 0.7
+          }
+        }
+      ]
+    },
+    {
+      "id": "v25",
+      "question": "Working on multiple projects simultaneously, you feel...",
+      "context": ["Work", "Execution"],
+      "options": [
+        {
+          "label": "A",
+          "text": "Energized by the variety",
+          "traits": {
+            "self_interruptible": 0.9,
+            "task_streaming": 0.8,
+            "exploration_oriented": 0.7
+          }
+        },
+        {
+          "label": "B",
+          "text": "Scattered and unable to focus properly",
+          "traits": {
+            "focus_lock": 0.9,
+            "completion_oriented": 0.8,
+            "sequence_dependent": 0.7
+          }
+        },
+        {
+          "label": "C",
+          "text": "Fine with proper organization",
+          "traits": {
+            "task_batching": 0.9,
+            "specification_first": 0.8,
+            "control_seeking": 0.7
+          }
+        }
+      ]
+    },
+    {
+      "id": "v26",
+      "question": "You're focused on work when someone needs your help. You...",
+      "context": ["Social", "Work"],
+      "options": [
+        {
+          "label": "A",
+          "text": "Help them immediately",
+          "traits": {
+            "self_interruptible": 0.9,
+            "external_prompts": 0.8,
+            "responds_to_interaction": 0.7
+          }
+        },
+        {
+          "label": "B",
+          "text": "Let them know when you'll be available",
+          "traits": {
+            "boundary_asserting": 0.9,
+            "focus_lock": 0.8,
+            "explicit_verbalization": 0.7
+          }
+        },
+        {
+          "label": "C",
+          "text": "Assess urgency before deciding",
+          "traits": {
+            "outcome_driven": 0.9,
+            "analytical_parsing": 0.7
+          }
+        }
+      ]
+    },
+    {
+      "id": "v27",
+      "question": "You make a visible mistake in front of others. You...",
+      "context": ["Social", "Emotional"],
+      "options": [
+        {
+          "label": "A",
+          "text": "Feel embarrassed and self-conscious",
+          "traits": {
+            "emotion_first": 0.9,
+            "rapid_emotional_labeling": 0.8,
+            "affect_driven": 0.7
+          }
+        },
+        {
+          "label": "B",
+          "text": "Focus on fixing it quickly",
+          "traits": {
+            "emotion_post_processed": 0.9,
+            "outcome_driven": 0.8,
+            "affect_filtered": 0.7
+          }
+        },
+        {
+          "label": "C",
+          "text": "Laugh it off and move on",
+          "traits": {
+            "affect_filtered": 0.9,
+            "ambiguity_tolerant": 0.7
+          }
+        }
+      ]
+    },
+    {
+      "id": "v28",
+      "question": "Choosing between a safe certain option and a risky uncertain one, you focus on...",
+      "context": ["Risk", "Decision-making"],
+      "options": [
+        {
+          "label": "A",
+          "text": "What you could lose",
+          "traits": {
+            "loss_avoidance": 0.9,
+            "risk_filtering": 0.8,
+            "stability_seeking": 0.7
+          }
+        },
+        {
+          "label": "B",
+          "text": "What you could gain",
+          "traits": {
+            "reward_seeking": 0.9,
+            "risk_sampling": 0.8,
+            "challenge_seeking": 0.7
+          }
+        },
+        {
+          "label": "C",
+          "text": "How much control you have over the outcome",
+          "traits": {
+            "control_seeking": 0.9,
+            "analytical_parsing": 0.8
+          }
+        }
+      ]
+    },
+    {
+      "id": "v29",
+      "question": "Your usual routine gets disrupted unexpectedly. You feel...",
+      "context": ["Stress", "Emotional"],
+      "options": [
+        {
+          "label": "A",
+          "text": "Uncomfortable and thrown off",
+          "traits": {
+            "stability_seeking": 0.9,
+            "emotion_first": 0.8,
+            "ambiguity_intolerant": 0.7
+          }
+        },
+        {
+          "label": "B",
+          "text": "Fine - you adapt easily to changes",
+          "traits": {
+            "ambiguity_tolerant": 0.9,
+            "opportunistic_planning": 0.8,
+            "affect_filtered": 0.7
+          }
+        },
+        {
+          "label": "C",
+          "text": "Interested by the unexpected change",
+          "traits": {
+            "challenge_seeking": 0.9,
+            "exploration_oriented": 0.8,
+            "reward_seeking": 0.7
+          }
+        }
+      ]
+    },
+    {
+      "id": "v30",
+      "question": "You encounter information that contradicts your beliefs. You...",
+      "context": ["Learning", "Belief"],
+      "options": [
+        {
+          "label": "A",
+          "text": "Look for problems with the information",
+          "traits": {
+            "belief_stability": 0.9,
+            "authority_skeptical": 0.8,
+            "analytical_parsing": 0.7
+          }
+        },
+        {
+          "label": "B",
+          "text": "Seriously consider that you might be wrong",
+          "traits": {
+            "belief_plasticity": 0.9,
+            "challenge_seeking": 0.8
+          }
+        },
+        {
+          "label": "C",
+          "text": "Seek out additional sources to clarify",
+          "traits": {
+            "ambiguity_intolerant": 0.9,
+            "analytical_parsing": 0.8,
+            "precision_seeking": 0.7
+          }
+        }
+      ]
+    },
+    {
+      "id": "v31",
+      "question": "You finish something ahead of schedule. You...",
+      "context": ["Work"],
+      "options": [
+        {
+          "label": "A",
+          "text": "Start the next task right away",
+          "traits": {
+            "completion_oriented": 0.9,
+            "steady_pace": 0.8
+          }
+        },
+        {
+          "label": "B",
+          "text": "Take a break to recharge",
+          "traits": {
+            "intrinsic_goals": 0.9,
+            "present_situational": 0.8
+          }
+        },
+        {
+          "label": "C",
+          "text": "Review and improve what you just finished",
+          "traits": {
+            "optimization_seeking": 0.9,
+            "precision_seeking": 0.8
+          }
+        }
+      ]
+    },
+    {
+      "id": "v32",
+      "question": "Given an assignment with minimal direction, you...",
+      "context": ["Work"],
+      "options": [
+        {
+          "label": "A",
+          "text": "Ask for specific requirements upfront",
+          "traits": {
+            "ambiguity_intolerant": 0.9,
+            "precision_seeking": 0.8,
+            "explicit_verbalization": 0.8
+          }
+        },
+        {
+          "label": "B",
+          "text": "Use your judgment and check in as you go",
+          "traits": {
+            "ambiguity_tolerant": 0.9,
+            "iteration_first": 0.8,
+            "control_seeking": 0.7
+          }
+        },
+        {
+          "label": "C",
+          "text": "Create a plan and get approval before starting",
+          "traits": {
+            "specification_first": 0.9,
+            "authority_anchored": 0.8,
+            "risk_filtering": 0.7
+          }
+        }
+      ]
+    },
+    {
+      "id": "v33",
+      "question": "When explaining complex ideas, you naturally...",
+      "context": ["Social", "Learning"],
+      "options": [
+        {
+          "label": "A",
+          "text": "Use analogies and real-world examples",
+          "traits": {
+            "example_driven": 0.9,
+            "holistic_sensing": 0.8,
+            "context_dependent_comm": 0.7
+          }
+        },
+        {
+          "label": "B",
+          "text": "Build from first principles step-by-step",
+          "traits": {
+            "analytical_parsing": 0.9,
+            "bottom_up": 0.85,
+            "sequence_dependent": 0.8,
+            "precision_seeking": 0.7
+          }
+        },
+        {
+          "label": "C",
+          "text": "Start with the big picture then fill in details",
+          "traits": {
+            "top_down": 0.95,
+            "model_building": 0.85,
+            "holistic_sensing": 0.75
+          }
+        }
+      ]
+    },
+    {
+      "id": "v34",
+      "question": "You're working on something and hit an unexpected obstacle. Your immediate reaction:",
+      "context": ["Work", "Problem-solving"],
+      "options": [
+        {
+          "label": "A",
+          "text": "Feel frustrated but push through",
+          "traits": {
+            "emotion_first": 0.9,
+            "completion_oriented": 0.85,
+            "focus_lock": 0.75
+          }
+        },
+        {
+          "label": "B",
+          "text": "Step back to reassess the approach",
+          "traits": {
+            "affect_filtered": 0.9,
+            "analytical_parsing": 0.85,
+            "belief_plasticity": 0.8,
+            "optimization_seeking": 0.7
+          }
+        },
+        {
+          "label": "C",
+          "text": "Try a few quick workarounds",
+          "traits": {
+            "iteration_first": 0.95,
+            "risk_sampling": 0.85,
+            "self_interruptible": 0.75
+          }
+        }
+      ]
+    },
+    {
+      "id": "v35",
+      "question": "In group discussions, you tend to...",
+      "context": ["Social", "Work"],
+      "options": [
+        {
+          "label": "A",
+          "text": "Share ideas as they come to you",
+          "traits": {
+            "initiates_interaction": 0.9,
+            "exploration_oriented": 0.8,
+            "self_interruptible": 0.7
+          }
+        },
+        {
+          "label": "B",
+          "text": "Think through your points before speaking",
+          "traits": {
+            "responds_to_interaction": 0.85,
+            "specification_first": 0.8,
+            "precision_seeking": 0.75
+          }
+        },
+        {
+          "label": "C",
+          "text": "Listen mostly, speak when you have something important",
+          "traits": {
+            "responds_to_interaction": 0.95,
+            "ambiguity_tolerant": 0.8,
+            "precision_seeking": 0.7
+          }
+        }
+      ]
+    },
+    {
+      "id": "v36",
+      "question": "When you receive vague instructions, you...",
+      "context": ["Work"],
+      "options": [
+        {
+          "label": "A",
+          "text": "Immediately ask clarifying questions",
+          "traits": {
+            "ambiguity_intolerant": 0.95,
+            "explicit_verbalization": 0.9,
+            "precision_seeking": 0.85,
+            "initiates_interaction": 0.7
+          }
+        },
+        {
+          "label": "B",
+          "text": "Fill in the gaps with reasonable assumptions",
+          "traits": {
+            "ambiguity_tolerant": 0.9,
+            "control_seeking": 0.8,
+            "iteration_first": 0.75
+          }
+        },
+        {
+          "label": "C",
+          "text": "Start working and clarify as issues arise",
+          "traits": {
+            "iteration_first": 0.95,
+            "ambiguity_tolerant": 0.85,
+            "opportunistic_planning": 0.75
+          }
+        }
+      ]
+    },
+    {
+      "id": "v37",
+      "question": "Facing a tight deadline with incomplete work, you prioritize...",
+      "context": ["Work", "Stress"],
+      "options": [
+        {
+          "label": "A",
+          "text": "Getting something complete even if imperfect",
+          "traits": {
+            "sufficiency_seeking": 0.95,
+            "deadline_driven": 0.9,
+            "outcome_driven": 0.8,
+            "loss_avoidance": 0.7
+          }
+        },
+        {
+          "label": "B",
+          "text": "Finishing the most important parts well",
+          "traits": {
+            "optimization_seeking": 0.9,
+            "analytical_parsing": 0.85,
+            "precision_seeking": 0.75
+          }
+        },
+        {
+          "label": "C",
+          "text": "Negotiating for more time",
+          "traits": {
+            "explicit_verbalization": 0.9,
+            "boundary_asserting": 0.85,
+            "loss_avoidance": 0.75
+          }
+        }
+      ]
+    },
+    {
+      "id": "v38",
+      "question": "You overhear people discussing a topic you know well but getting wrong. You...",
+      "context": ["Social"],
+      "options": [
+        {
+          "label": "A",
+          "text": "Jump in to correct the misinformation",
+          "traits": {
+            "initiates_interaction": 0.9,
+            "confrontation_tolerant": 0.85,
+            "precision_seeking": 0.8,
+            "principle_driven": 0.7
+          }
+        },
+        {
+          "label": "B",
+          "text": "Let it go unless it really matters",
+          "traits": {
+            "confrontation_averse": 0.9,
+            "ambiguity_tolerant": 0.8,
+            "outcome_driven": 0.75
+          }
+        },
+        {
+          "label": "C",
+          "text": "Offer a correction if appropriate to the situation",
+          "traits": {
+            "context_dependent_comm": 0.95,
+            "boundary_probing": 0.8,
+            "precision_seeking": 0.7
+          }
+        }
+      ]
+    },
+    {
+      "id": "v39",
+      "question": "When learning a new skill, you feel most effective when...",
+      "context": ["Learning"],
+      "options": [
+        {
+          "label": "A",
+          "text": "Someone shows you how it's done",
+          "traits": {
+            "example_driven": 0.95,
+            "bottom_up": 0.85,
+            "trust_delegating": 0.75
+          }
+        },
+        {
+          "label": "B",
+          "text": "You understand the underlying principles",
+          "traits": {
+            "model_building": 0.95,
+            "top_down": 0.9,
+            "rule_first": 0.85,
+            "analytical_parsing": 0.75
+          }
+        },
+        {
+          "label": "C",
+          "text": "You can experiment and practice",
+          "traits": {
+            "iteration_first": 0.95,
+            "risk_sampling": 0.9,
+            "exploration_oriented": 0.85,
+            "intrinsic_goals": 0.7
+          }
+        }
+      ]
+    },
+    {
+      "id": "v40",
+      "question": "Someone questions your competence publicly. You...",
+      "context": ["Social", "Conflict"],
+      "options": [
+        {
+          "label": "A",
+          "text": "Defend yourself with evidence",
+          "traits": {
+            "confrontation_tolerant": 0.95,
+            "boundary_asserting": 0.9,
+            "analytical_parsing": 0.8,
+            "explicit_verbalization": 0.75
+          }
+        },
+        {
+          "label": "B",
+          "text": "Address it privately later",
+          "traits": {
+            "confrontation_averse": 0.9,
+            "context_dependent_comm": 0.85,
+            "boundary_asserting": 0.7
+          }
+        },
+        {
+          "label": "C",
+          "text": "Let your work speak for itself",
+          "traits": {
+            "confrontation_averse": 0.85,
+            "belief_stability": 0.8,
+            "outcome_driven": 0.75,
+            "intrinsic_goals": 0.7
+          }
+        }
+      ]
+    },
+    {
+      "id": "v41",
+      "question": "You discover your approach won't work and need to start over. You feel...",
+      "context": ["Work", "Emotional"],
+      "options": [
+        {
+          "label": "A",
+          "text": "Defeated and frustrated",
+          "traits": {
+            "emotion_first": 0.95,
+            "loss_avoidance": 0.9,
+            "completion_oriented": 0.75
+          }
+        },
+        {
+          "label": "B",
+          "text": "Annoyed but ready to try again",
+          "traits": {
+            "affect_driven": 0.8,
+            "iteration_first": 0.85,
+            "challenge_seeking": 0.75
+          }
+        },
+        {
+          "label": "C",
+          "text": "Curious what will work better",
+          "traits": {
+            "affect_filtered": 0.9,
+            "exploration_oriented": 0.95,
+            "challenge_seeking": 0.85,
+            "belief_plasticity": 0.8
+          }
+        }
+      ]
+    },
+    {
+      "id": "v42",
+      "question": "In a crisis situation, you instinctively...",
+      "context": ["Crisis", "Stress"],
+      "options": [
+        {
+          "label": "A",
+          "text": "Take charge and direct action",
+          "traits": {
+            "control_seeking": 0.95,
+            "confrontation_tolerant": 0.9,
+            "initiates_interaction": 0.85,
+            "deadline_driven": 0.8
+          }
+        },
+        {
+          "label": "B",
+          "text": "Stay calm and assess the situation",
+          "traits": {
+            "affect_filtered": 0.95,
+            "analytical_parsing": 0.9,
+            "ambiguity_tolerant": 0.8
+          }
+        },
+        {
+          "label": "C",
+          "text": "Support whoever is leading",
+          "traits": {
+            "trust_delegating": 0.9,
+            "responds_to_interaction": 0.85,
+            "confrontation_averse": 0.7
+          }
+        }
+      ]
+    },
+    {
+      "id": "v43",
+      "question": "When brainstorming, you prefer to...",
+      "context": ["Work", "Creative"],
+      "options": [
+        {
+          "label": "A",
+          "text": "Generate many ideas quickly without judging",
+          "traits": {
+            "exploration_oriented": 0.95,
+            "self_interruptible": 0.85,
+            "risk_sampling": 0.8,
+            "reward_seeking": 0.7
+          }
+        },
+        {
+          "label": "B",
+          "text": "Think through feasible solutions carefully",
+          "traits": {
+            "analytical_parsing": 0.9,
+            "risk_filtering": 0.85,
+            "specification_first": 0.8,
+            "precision_seeking": 0.75
+          }
+        },
+        {
+          "label": "C",
+          "text": "Build on others' ideas",
+          "traits": {
+            "responds_to_interaction": 0.9,
+            "holistic_sensing": 0.85,
+            "belief_plasticity": 0.75
+          }
+        }
+      ]
+    },
+    {
+      "id": "v44",
+      "question": "A project's scope keeps expanding beyond original plans. You...",
+      "context": ["Work"],
+      "options": [
+        {
+          "label": "A",
+          "text": "Push back to maintain boundaries",
+          "traits": {
+            "boundary_asserting": 0.95,
+            "control_seeking": 0.9,
+            "explicit_verbalization": 0.85,
+            "loss_avoidance": 0.75
+          }
+        },
+        {
+          "label": "B",
+          "text": "Adapt and incorporate new requirements",
+          "traits": {
+            "optionality_preservation": 0.9,
+            "ambiguity_tolerant": 0.85,
+            "opportunistic_planning": 0.8,
+            "self_interruptible": 0.7
+          }
+        },
+        {
+          "label": "C",
+          "text": "Renegotiate timeline or resources",
+          "traits": {
+            "analytical_parsing": 0.9,
+            "explicit_verbalization": 0.85,
+            "outcome_driven": 0.8
+          }
+        }
+      ]
+    }
+  ]
+}
